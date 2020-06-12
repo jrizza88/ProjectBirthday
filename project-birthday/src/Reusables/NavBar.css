@@ -1,0 +1,11 @@
+#navbar {
+    width: 220px;
+    transform: translateX(-220px);
+    transition: transform 400ms ease-in;
+  }
+  #navbar.slideIn {
+    transform: translateX(0);
+  }
+  #navbar.slideOut {
+    transform: translateX(-220px);
+  }
