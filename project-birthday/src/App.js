@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Donate from "./Components/Donate/Donate";
 import Events from "./Components/Events/Events";
 import NavBar from "./Reusables/NavBar";
@@ -9,13 +9,17 @@ function App() {
   return (
     <div className="App">
     <NavBar />
-    < Panel />
       <div className="container">
       <NavBar />
         <h1 className='title'>Project Birthday!</h1>
         <div className='cake'>
             <div className='candles'></div>
         </div>
+      </div>
+      <div className="threePanelSection">
+        <Panel title={"Causes"} />
+        <Panel title={"Activities"} />
+        <Panel title={"Info"}/>
       </div>
       < Donate />
       < Events />
