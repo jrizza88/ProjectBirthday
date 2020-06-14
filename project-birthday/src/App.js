@@ -10,8 +10,8 @@ function App() {
     <div className="App">
     <NavBar />
       <div className="container">
-      <NavBar />
         <h1 className='title'>Project Birthday!</h1>
+        <div>Main Text</div>
         <div className='cake'>
             <div className='candles'></div>
         </div>
@@ -21,8 +21,8 @@ function App() {
         <Panel title={"Activities"} />
         <Panel title={"Info"}/>
       </div>
-      < Donate />
-      < Events />
+      <div className="donateDiv">< Donate /></div>
+      <div className="eventsDiv">< Events /></div>
     </div>
   );
 }
