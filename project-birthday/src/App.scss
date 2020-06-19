@@ -2,43 +2,64 @@
   text-align: center;
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  background: url("./images/abstract-cake.jpg") no-repeat center center;
+  background-size: cover;
+  // background: #e6e6fa;
+  // color: #864313;
+  font-size: 12px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  max-width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.App-link {
-  color: #61dafb;
-}
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
+
+// .App-header {
+//   background-color: #282c34;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+// }
+
+// .App-link {
+//   color: #61dafb;
+// }
 
 .threePanelSection {
   display: flex;
   justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
 
-
+// css for the cake
 @-webkit-keyframes flames {
   0% {
   height: 2.2em;
@@ -98,11 +119,7 @@
   *::after {
   box-sizing: border-box;
   }
-  body {
-  background: #e6e6fa;
-  color: #864313;
-  font-size: 12px;
-  }
+
   .title {
   text-align: center;
   font-size: 3em;

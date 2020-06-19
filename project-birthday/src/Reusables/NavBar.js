@@ -9,27 +9,42 @@ const Navbar = ({ visible }) => {
   // };
   return (
   <div className="navbar">
-    <Link activeClass="active" 
-    to="/" 
-    spy={true}
-    smooth={true}    
-    offset={-70}
-    duration={500}
-    >Project Birthday </Link>
+      <Link activeClass="active" 
+      className="navhome"
+      to="container" 
+      spy={true}
+      smooth={true}    
+      offset={-70}
+      duration={500}
+      >Project Birthday 
+      </Link>
+    <div className="bar">
 
-    <Link activeClass="active" 
-    to="donateDiv"    
-    spy={true}
-    smooth={true}    
-    offset={-70}
-    duration={800}>Donate</Link>
+      <Link activeClass="active" 
+      className="navitem"
+      to="donateDiv"    
+      spy={true}
+      smooth={true}    
+      offset={-70}
+      duration={800}>Donate</Link>
 
-    <Link activeClass="active" 
-    to="eventsDiv"    
-    spy={true}
-    smooth={true}    
-    offset={-70}
-    duration={800}>Celebration</Link>
+      <Link activeClass="active" 
+      className="navitem"
+      to="eventsDiv"    
+      spy={true}
+      smooth={true}    
+      offset={-70}
+      duration={800}>Info
+      </Link>
+      <Link activeClass="active" 
+      className="navitem"
+      to="eventsDiv"    
+      spy={true}
+      smooth={true}    
+      offset={-70}
+      duration={800}>Celebration
+      </Link>
+    </div>
   </div>
   )
   }
