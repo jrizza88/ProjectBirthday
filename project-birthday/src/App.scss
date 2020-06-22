@@ -13,6 +13,7 @@ body {
   max-width: 1200px;
   width: 100%;
   display: flex;
+  position: inherit;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -124,6 +125,7 @@ body {
   text-align: center;
   font-size: 3em;
   }
+  
   .cake {
   height: 30em;
   width: 30em;

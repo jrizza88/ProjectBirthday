@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, animateScroll as scroll } from "react-scroll";
 import "./NavBar.scss";
 
-
+import birthday from "../images/birthday.png"
 const Navbar = ({ visible }) => {
   // scrollToTop = () => {
   //   scroll.scrollToTop();
@@ -16,7 +16,7 @@ const Navbar = ({ visible }) => {
       smooth={true}    
       offset={-70}
       duration={500}
-      >Project Birthday 
+      ><img src={birthday} alt="bday"/>
       </Link>
     <div className="bar">
 
@@ -34,7 +34,7 @@ const Navbar = ({ visible }) => {
       spy={true}
       smooth={true}    
       offset={-70}
-      duration={800}>Info
+      duration={800}>Learn
       </Link>
       <Link activeClass="active" 
       className="navitem"
@@ -42,7 +42,7 @@ const Navbar = ({ visible }) => {
       spy={true}
       smooth={true}    
       offset={-70}
-      duration={800}>Celebration
+      duration={800}>Celebrate
       </Link>
     </div>
   </div>
