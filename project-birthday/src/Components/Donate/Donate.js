@@ -9,24 +9,33 @@ import okra from "../../images/okra2.png"
 const Donate = () => {
 const cause1 = {
         backgroundImage: 'url(' + change + ')',
+        maxWidth:'100%',
+        maxHeight:'100%',
         borderRadius: '10% 0 0 0 ',
         // marginTop: '37.5px'
 }
 
 const cause2 = {
     backgroundImage: 'url(' + nysylc + ')',
+    maxWidth:'100%',
+    maxHeight:'100%',
     borderRadius: '0 10% 0 0 ',
     // marginTop: '37.5px'
 }
 
 const cause3 = {
     backgroundImage: 'url(' + fortune + ')',
+    maxWidth:'100%',
+    maxHeight:'100%',
     borderRadius: '0 0 0 10% '
 }
 
 const cause4 = {
     backgroundImage: 'url(' + okra + ')',
     borderRadius: '0 0 10% 0 ',
+    maxWidth:'100%',
+    maxHeight:'100%',
+    objectFit: 'cover',
     // paddingRight: '30px',
     // paddingBottom: '199px',
     color: 'black'
