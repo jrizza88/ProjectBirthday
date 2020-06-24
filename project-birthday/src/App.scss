@@ -1,6 +1,14 @@
+
+
+
 .App {
   text-align: center;
 }
+
+// h1{
+//   font-size: 3rem;
+//   color: white;
+// }
 
 body {
   background: url("./images/abstract-cake.jpg") no-repeat center center;
@@ -24,27 +32,6 @@ body {
   margin-left: auto;
 }
 
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
-
-// .App-header {
-//   background-color: #282c34;
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
-
-// .App-link {
-//   color: #61dafb;
-// }
 
 .threePanelSection {
   display: flex;
@@ -209,3 +196,60 @@ body {
   animation: flames 0.75s infinite alternate;
   box-shadow: 0 0 0 1px #e8ad4f, -3.5em 5em 1px 0 #E29822, 3.5em 5em 1px 0 #E29822, -7em -2.5em 1px 0 #E29822, 7em -2.5em 1px 0 #E29822, -10.5em 2em 1px 0 #E29822, 10.5em 2em 1px 0 #E29822;
   }
+
+
+
+
+
+  @keyframes yourAnimation {
+    0.0%{
+        font-size: 3rem;
+        color: white;
+    }
+    20.1%{
+        transform: scale(1);
+        font-size: 3rem;
+        color: white;
+    }
+    40.3%{
+        transform: scale(1.35);
+        font-size: 3rem;
+        color: white;
+    }
+    60.1%{
+        transform: scale(1.15);
+        font-size: 3rem;
+        color: white;
+    }
+    79.6%{
+        transform: scale(1.35);
+        font-size: 3rem;
+        color: white;
+    }
+    99.5%{
+        transform: scale(1);
+        font-size: 3rem;
+        color: white;
+    }
+  }
+
+/* Add the animation: property to whichever element you want to animate */
+// #elementToAnimate{
+//   animation: yourAnimation 5s ease 0s infinite normal forwards;
+// }
+
+/* Add the animation: property to whichever element you want to animate */
+.animateTitle{
+  animation: yourAnimation 5s ease 2s infinite normal forwards;
+  font-size: 3rem;
+  color: white;
+}
+
+.targetElement{
+  color:var(--red);
+  border-radius: 50%;
+  height: 300px;
+  width: 500px;
+  font-size: 65px;
+  transform-origin: center center;    
+}
