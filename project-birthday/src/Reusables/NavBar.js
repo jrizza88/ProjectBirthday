@@ -11,7 +11,7 @@ const Navbar = ({ visible }) => {
   <div className="navbar">
       <Link activeClass="active" 
       className="navhome"
-      to="container" 
+      to="App" 
       spy={true}
       smooth={true}    
       offset={-70}

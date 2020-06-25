@@ -4,8 +4,8 @@ import "./Panel.scss";
 const Panel = ({title, description}) => {
     return (
         <div className="panelDiv">
-            <div className="title">{title}</div>
-            <div className="description">{description}</div>
+            <div className="titleMain">{title}</div>
+            <div className="descriptionMain">{description}</div>
         </div>
     )
 }

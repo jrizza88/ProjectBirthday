@@ -75,7 +75,9 @@
   }
 
   .navhome {
+    position: fixed;
     margin-left: 15px;
+    cursor: pointer;
   }
   
   // #8191c5
@@ -101,29 +103,3 @@
   
   
 }
-
-// .bar {
-//   padding: 0 25px;
-//   justify-content: space-evenly;
-// }
-
-// .bar {
-//   display: flex;
-//   width: 50%;
-//   padding: 0 25px;
-//   font-size: 25px;
-//   justify-content: space-around;
-
-
-// }
-
-
-// .navitem {
-//   background: black;
-//   border-bottom: 2px solid black;
-//   &:hover {
-//     background: white;
-//     color: black;
-//   }
-
-// }

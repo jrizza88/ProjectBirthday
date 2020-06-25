@@ -36,6 +36,7 @@ body {
 .threePanelSection {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 // @keyframes App-logo-spin {
@@ -243,6 +244,7 @@ body {
   animation: yourAnimation 5s ease 2s infinite normal forwards;
   font-size: 3rem;
   color: white;
+  margin: 33px 0;
 }
 
 .targetElement{
