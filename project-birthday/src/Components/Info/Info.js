@@ -33,16 +33,19 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
   },
-  subRoot: {
-    // maxWidth: 1000,
+  grid: {
+    paddingBottom: 20
   },
-//   grid: {
-//     paddingBottom: 20
-//   },
-//   cardGrid: {
-//     paddingTop: theme.spacing(8),
-//     paddingBottom: theme.spacing(8)
-//   },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8)
+  },
+subRoot: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    margin: 10
+  },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
@@ -57,6 +60,16 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
+  expandTwo: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpenTwo: {
+    transform: 'rotate(180deg)',
+  },
   avatar: {
     backgroundColor: red[500],
   },
@@ -65,9 +78,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Info() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
+  const [expandedTwo, setExpandedTwo] = React.useState(false);
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const handleExpandClickTwo = () => {
+    setExpandedTwo(!expandedTwo);
   };
 
   return (
@@ -83,13 +100,18 @@ export default function Info() {
                pokeball pikachu blasting of again thunderbolt charmander battle gym battle gym battle squirtle.
             </div>
         </div>
+
+<Grid container spacing={6}>
+    <Grid xs={12} sm={6} md={6} className={classes.grid}>
     <Card className={classes.subRoot}>
 
-    <Grid container spacing={2}   direction="row"
-  justify="space-evenly"
-  alignItems="center">
+    
 
-    <Grid item xs={12} sm={6} md={4}>
+    {/* <Grid container spacing={2}   direction="row"
+  justify="space-evenly"
+  alignItems="center"> */}
+
+    {/* <Grid item xs={12} sm={6} md={4}> */}
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -160,8 +182,16 @@ export default function Info() {
           </Typography>
         </CardContent>
       </Collapse>
+      </Card>
       </Grid>
-      <Grid xs={12} sm={6} md={4}>
+
+     {/* CARD TWO */}
+
+     <Grid xs={12} sm={6} md={6} className={classes.grid}>
+    <Card className={classes.subRoot}>
+
+    
+
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -195,17 +225,17 @@ export default function Info() {
           <ShareIcon />
         </IconButton>
         <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
+          className={clsx(classes.expandTwo, {
+            [classes.expandOpenTwo]: expandedTwo,
           })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
+          onClick={handleExpandClickTwo}
+          aria-expanded={expandedTwo}
           aria-label="show more"
         >
           <ExpandMoreIcon />
         </IconButton>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <Collapse in={expandedTwo} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>
@@ -232,10 +262,11 @@ export default function Info() {
           </Typography>
         </CardContent>
       </Collapse>
+      </Card>
       </Grid>
               
     </Grid>
-    </Card>
+ 
 
     
     </div>
