@@ -90,7 +90,7 @@ export default function Info() {
   return (
     <div className={classes.root}>
     <div className="donationInfoSection">
-            <h1>Donate</h1>
+            <h1>Protect yourself on the Internet</h1>
             <div className="info">Charmander pokeball team rocket char pikachu jiggly puff 
                 pokedex i choose you sycther gameboy colour battle onyx i choose you trainer gameboy colour pokedex thunderbolt i choose
                 you sycther gameboy colour mew jiggly puff pikachu onyx pokedex pikachu trainer abra ash mew gameboy colour a wild bulbasaur
