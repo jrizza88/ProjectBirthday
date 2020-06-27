@@ -62,6 +62,7 @@
     line-height: 1.25;
     @include div-border-drawing(black, #8191c5, 8px, bottom, right);
 }
+//#b09dde
 
 .titleMain{
     font-size: 2rem;
@@ -70,8 +71,8 @@
 
 .descriptionMain{
     display: flex;
-    justify-content: space-around; 
-    // align-items: space-around;
+    justify-content: flex-start; 
+    align-self: flex-start;
     color: black;
     font-size: 1.6rem;
     line-height: 1.5;
@@ -80,7 +81,7 @@
 }
 
 .avatar{
-  height: 218px;
+  height: 250px;
   width: 250px;
   background: white;
   position: relative;

@@ -1,22 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import Grid from "@material-ui/core/Grid";
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
+import Modal from '@material-ui/core/Modal';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Backdrop from '@material-ui/core/Backdrop';
+import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is required for IE 11 support
 
+import fortune from "../../images/fortune.jpeg"
 import passwordImage from "../../images/passwordManager3.jpg"
 // //import passwordImage from "../../images/lavender-background.jpg"
 
@@ -41,51 +38,71 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(8)
   },
 subRoot: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    margin: 10
+    // height: "100%",
+    // display: "flex",
+    // flexDirection: "column",
+    margin: 5,
+    maxWidth: 500,
+    // margin: '10px'
   },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  expandTwo: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpenTwo: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
   },
 }));
 
+
+const Fade = React.forwardRef(function Fade(props, ref) {
+  const { in: open, children, onEnter, onExited, ...other } = props;
+  const style = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: open ? 1 : 0 },
+    onStart: () => {
+      if (open && onEnter) {
+        onEnter();
+      }
+    },
+    onRest: () => {
+      if (!open && onExited) {
+        onExited();
+      }
+    },
+  });
+
+  return (
+    <animated.div ref={ref} style={style} {...other}>
+      {children}
+    </animated.div>
+  );
+});
+
+Fade.propTypes = {
+  children: PropTypes.element,
+  in: PropTypes.bool.isRequired,
+  onEnter: PropTypes.func,
+  onExited: PropTypes.func,
+};
+
+
+
 export default function Info() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-  const [expandedTwo, setExpandedTwo] = React.useState(false);
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+    const [open, setOpen] = React.useState(false);
 
-  const handleExpandClickTwo = () => {
-    setExpandedTwo(!expandedTwo);
-  };
+    const handleOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
 
   return (
     <div className={classes.root}>
@@ -101,168 +118,107 @@ export default function Info() {
             </div>
         </div>
 
-<Grid container spacing={6}>
+<Grid container spacing={3}>
     <Grid xs={12} sm={6} md={6} className={classes.grid}>
     <Card className={classes.subRoot}>
-
-    
-
-    {/* <Grid container spacing={2}   direction="row"
-  justify="space-evenly"
-  alignItems="center"> */}
-
-    {/* <Grid item xs={12} sm={6} md={4}> */}
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        className={classes.media}
-        image={passwordImage}
-        title="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <CardActionArea>
+        <CardMedia
+          component={"img"}
+          alt="Contemplative Reptile"
+          height="240"
+          image={fortune}
+          title="Contemplative Reptile"
+        />
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
+          <Typography gutterBottom variant="h5" component="h2">
+            Lizard
           </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-            heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-            browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-            and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-            pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-          </Typography>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-            without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat to
-            medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook
-            again without stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don’t open.)
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
+          <Typography variant="body2" color="textSecondary" component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
           </Typography>
         </CardContent>
-      </Collapse>
-      </Card>
+      </CardActionArea>
+      <CardActions>
+      <Button size="small" color="primary" onClick={handleOpen}>
+        Learn More
+      </Button>
+      <Modal
+        aria-labelledby="spring-modal-title"
+        aria-describedby="spring-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper}>
+            <h2 id="spring-modal-title">Spring modal</h2>
+            <p id="spring-modal-description">react-spring animates me.</p>
+          </div>
+        </Fade>
+      </Modal>
+        <Button size="small" color="primary">
+          Donate
+        </Button>
+      </CardActions>
+    </Card>
       </Grid>
 
      {/* CARD TWO */}
 
      <Grid xs={12} sm={6} md={6} className={classes.grid}>
-    <Card className={classes.subRoot}>
-
-    
-
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        className={classes.media}
-        image={passwordImage}
-        title="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expandTwo, {
-            [classes.expandOpenTwo]: expandedTwo,
-          })}
-          onClick={handleExpandClickTwo}
-          aria-expanded={expandedTwo}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expandedTwo} timeout="auto" unmountOnExit>
+     <Card className={classes.subRoot}>
+      <CardActionArea>
+        <CardMedia
+          component={"img"}
+          alt="Contemplative Reptile"
+          height="240"
+          image={fortune}
+          title="Contemplative Reptile"
+        />
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
+          <Typography gutterBottom variant="h5" component="h2">
+            Lizard
           </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-            heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-            browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-            and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-            pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-          </Typography>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-            without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat to
-            medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook
-            again without stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don’t open.)
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
+          <Typography variant="body2" color="textSecondary" component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
           </Typography>
         </CardContent>
-      </Collapse>
-      </Card>
+      </CardActionArea>
+      <CardActions>
+      <Button size="small" color="primary" onClick={handleOpen}>
+        Learn More
+      </Button>
+      <Modal
+        aria-labelledby="spring-modal-title"
+        aria-describedby="spring-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper}>
+            <h2 id="spring-modal-title">Spring modal</h2>
+            <p id="spring-modal-description">react-spring animates me.</p>
+          </div>
+        </Fade>
+      </Modal>
+        <Button size="small" color="primary">
+          Donate
+        </Button>
+      </CardActions>
+    </Card>
       </Grid>
               
     </Grid>
