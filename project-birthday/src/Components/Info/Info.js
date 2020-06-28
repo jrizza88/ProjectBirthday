@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   grid: {
-    paddingBottom: 20
+    paddingBottom: 20,
+    // width: '100%'
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -42,7 +43,7 @@ subRoot: {
     // display: "flex",
     // flexDirection: "column",
     margin: 5,
-    maxWidth: 500,
+    maxWidth: 600,
     // margin: '10px'
   },
   modal: {
@@ -126,7 +127,7 @@ export default function Info() {
           component={"img"}
           alt="Contemplative Reptile"
           height="240"
-          image={fortune}
+          image={passwordImage}
           title="Contemplative Reptile"
         />
         <CardContent>
@@ -178,7 +179,7 @@ export default function Info() {
           component={"img"}
           alt="Contemplative Reptile"
           height="240"
-          image={fortune}
+          image={passwordImage}
           title="Contemplative Reptile"
         />
         <CardContent>

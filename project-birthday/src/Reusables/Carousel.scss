@@ -1,0 +1,39 @@
+
+.carouselContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    // margin-bottom: 20px;
+    margin: 3rem 0 1.5rem 0;
+    // font-size: 2.4rem;
+    line-height: 1.25;
+    border: 7px solid black;
+}
+
+.carouselDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.meImage {
+    // height: 400px;
+    width: 300px;
+    background: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    color: black;
+    font-size: 20px;
+    margin-top: 25%;
+    font-weight: 700;
+    transform: translateZ(0);
+    opacity: 1;
+    // margin-right: 40px;
+    // flex: 0 0 203px;
+}
+
