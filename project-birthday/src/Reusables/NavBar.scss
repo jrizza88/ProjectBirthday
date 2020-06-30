@@ -78,6 +78,9 @@
     position: fixed;
     margin-left: 15px;
     cursor: pointer;
+    @media (max-width: 1450px) {
+      position: relative;
+    }
   }
   
   // #8191c5
