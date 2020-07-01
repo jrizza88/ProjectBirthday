@@ -37,6 +37,16 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
       },
+      gridContainer: {
+        [theme.breakpoints.down(650)]: {
+        alignSelf: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        }
+      },
+      // grid: {
+      //   margin: 'inherit'
+      // }
   }));
 
   const Fade = React.forwardRef(function Fade(props, ref) {
@@ -98,7 +108,7 @@ export default function Donate() {
         </div>
         <div className="donationImageSection">
 
-<Grid container spacing={6}>
+<Grid container className={classes.gridContainer} spacing={6}>
     <Grid xs={12} sm={6} md={6} className={classes.grid}>
     <Card className={classes.root}>
       <CardActionArea>

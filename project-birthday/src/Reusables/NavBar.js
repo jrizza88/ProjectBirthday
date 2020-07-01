@@ -77,15 +77,35 @@ const useStyles = makeStyles(theme => ({
   imageMobile: {
     display: "flex"
   },
+  // listItemRoot: {
+  //   width: 100%;
+  //   display: flex;
+  //   position: relative;
+  //   flex-direction: column;
+  //   box-sizing: border-box;
+  //   text-align: left;
+  //   /* align-items: center; */
+  //   align-self: center;
+  //   /* background: lavender; */
+  //   padding-top: 8px;
+  //   padding-bottom: 8px;
+  //   justify-content: flex-start;
+  //   text-decoration: none;
+  // },
   navItemM: {   
       // background: "none",
       border: "none",
+      width: "100%",
+      flexDirection: "column",
+      alignSelf: "center",
       cursor: "pointer",
       padding: '1em 1em',
       letterSpacing: '0.05rem',
       fontWeight: 'bold',
+      transition: '0.4s',
+      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
       '&:hover': {
-        border: 'solid 3px #556b2f',
+        background: 'lavender',
      },
   }
 }));

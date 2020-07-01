@@ -39,6 +39,12 @@ body {
   width: 100%;
 }
 
+// .donateDiv {
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+// }
+
 // @keyframes App-logo-spin {
 //   from {
 //     transform: rotate(0deg);
@@ -122,6 +128,15 @@ body {
   border-radius: 100% / 50%;
   background: #7b3d11;
   border-bottom: 0.25em solid #2d1606;
+    @media (mad-width: 500px) {
+      width: 25em;
+    }
+    @media (max-width: 400px) {
+      display: none;
+    }
+    @media (max-width: 350px) {
+      display: none;
+    }
   }
   .cake::before {
   content: '';
