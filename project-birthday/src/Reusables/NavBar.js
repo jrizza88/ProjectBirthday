@@ -66,7 +66,8 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down(656)]: {
       display: "flex",
       justifyContent: "space-between",
-      background: "lavender"
+      background: "lavender",
+      color: "black"
     },
     fontSize: 16
   },
