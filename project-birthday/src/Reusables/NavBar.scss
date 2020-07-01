@@ -60,7 +60,9 @@
   //background: #ffffd4; // temp color until footer is finalized.
   background: lavender; 
   border-bottom: 5px solid rgb(54, 52, 52);
-
+  @media (max-width: 655px) {
+    display: none;
+  }
   .bar {
     display: flex;
     width: 100%;
@@ -75,7 +77,16 @@
   }
 
   .navhome {
+    position: fixed;
     margin-left: 15px;
+    cursor: pointer;
+    @media (max-width: 1450px) {
+      position: relative;
+    }
+    @media (max-width: 655px) {
+      margin-left: 5px;
+    
+    }
   }
   
   // #8191c5
@@ -101,29 +112,3 @@
   
   
 }
-
-// .bar {
-//   padding: 0 25px;
-//   justify-content: space-evenly;
-// }
-
-// .bar {
-//   display: flex;
-//   width: 50%;
-//   padding: 0 25px;
-//   font-size: 25px;
-//   justify-content: space-around;
-
-
-// }
-
-
-// .navitem {
-//   background: black;
-//   border-bottom: 2px solid black;
-//   &:hover {
-//     background: white;
-//     color: black;
-//   }
-
-// }

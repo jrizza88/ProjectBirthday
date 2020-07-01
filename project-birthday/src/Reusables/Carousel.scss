@@ -1,0 +1,58 @@
+
+.carouselContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    // margin-bottom: 20px;
+    margin: 3rem 0 1.5rem 0;
+    // font-size: 2.4rem;
+    line-height: 1.25;
+    border: 7px solid white;
+}
+
+.carouselDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+   
+    max-width:100%;
+    max-height:100%;
+}
+
+.photo {
+    position: absolute;
+    height: 600px;
+    width: 700px;
+    border-radius: 5px;
+    @media (min-width: 600px ) and (max-width: 1025px ) {
+        width: 500px;
+        height: 500px;
+    }
+
+    @media (max-width: 599px) {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.meImage {
+    // height: 400px;
+    width: 300px;
+    background: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    color: black;
+    font-size: 20px;
+    margin-top: 25%;
+    font-weight: 700;
+    transform: translateZ(0);
+    opacity: 1;
+    // margin-right: 40px;
+    // flex: 0 0 203px;
+}
+
