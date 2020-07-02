@@ -97,7 +97,7 @@ Fade.propTypes = {
 export default function Info() {
   const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-
+    const [open1, setOpen1] = React.useState(false);
     const handleOpen = () => {
       setOpen(true);
     };
@@ -106,9 +106,17 @@ export default function Info() {
       setOpen(false);
     };
 
+    const handleOpen1 = () => {
+      setOpen1(true);
+    };
+  
+    const handleClose1 = () => {
+      setOpen1(false);
+    };
+
   return (
     <div className={classes.root}>
-    <div className="donationInfoSection">
+    <div className="infoSection">
             <h1>Protect yourself on the Internet</h1>
             <img className="infoImage" src={jamarDev} alt="jamarthedev" />
             <div className="info">Charmander pokeball team rocket char pikachu jiggly puff 
@@ -160,7 +168,11 @@ export default function Info() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="spring-modal-title">Spring modal</h2>
+            <h2 id="spring-modal-title">Please donate to one of four causes
+                 that are near and dear to my heart. 
+                These donations go to a local based organization that is in complete support of the movements, ranging from ....
+                Org 1 supports the Black Lives Matter movement, Org 2 supports the Latinx in that, Org 3 supports Mental Health Endeavour, 
+                and Org 4 supports formely incarcerated men who are in need of mental health services to get their feet off the ground. </h2>
             <p id="spring-modal-description">react-spring animates me.</p>
           </div>
         </Fade>
@@ -195,24 +207,24 @@ export default function Info() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Button size="small" color="primary" onClick={handleOpen}>
+      <Button size="small" color="primary" onClick={handleOpen1}>
         Learn More
       </Button>
       <Modal
         aria-labelledby="spring-modal-title"
         aria-describedby="spring-modal-description"
         className={classes.modal}
-        open={open}
-        onClose={handleClose}
+        open={open1}
+        onClose={handleClose1}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={open}>
+        <Fade in={open1}>
           <div className={classes.paper}>
-            <h2 id="spring-modal-title">Spring modal</h2>
+            <h2 id="spring-modal-title">INFO</h2>
             <p id="spring-modal-description">react-spring animates me.</p>
           </div>
         </Fade>

@@ -15,21 +15,26 @@ import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is requir
 
 import "./Donate.scss"
 import jamar from "../../images/jamar_thumbs.png"
-import change from "../../images/change.png"
+import road from "../../images/maketheroad.png"
+// import change from "../../images/change.png"
 //import fortune from "../../images/fortunesociety.png"
 import fortune from "../../images/fortune.jpeg"
-import nysylc from "../../images/nysylc3.jpeg"
+// import nysylc from "../../images/nysylc3.jpeg"
 import okra from "../../images/okra2.png"
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    subRoot: {
       maxWidth: 345,
-      margin: '10px'
+      margin: '10px',
+      
     },
     modal: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        color: 'black',
+        width: '85%'
+        // display: 'none'
       },
       paper: {
         backgroundColor: theme.palette.background.paper,
@@ -44,11 +49,15 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         }
       },
+      details: {
+        fontSize: '1.5rem',
+        color: 'black'
+      },
       // grid: {
       //   margin: 'inherit'
       // }
   }));
-
+  
   const Fade = React.forwardRef(function Fade(props, ref) {
     const { in: open, children, onEnter, onExited, ...other } = props;
     const style = useSpring({
@@ -80,10 +89,14 @@ const useStyles = makeStyles((theme) => ({
     onExited: PropTypes.func,
   };
   
+  
 
 export default function Donate() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
+    const [open1, setOpen1] = React.useState(false);
+    const [open2, setOpen2] = React.useState(false);
+    const [open3, setOpen3] = React.useState(false);
 
     const handleOpen = () => {
       setOpen(true);
@@ -92,6 +105,31 @@ export default function Donate() {
     const handleClose = () => {
       setOpen(false);
     };
+
+    const handleOpen1 = () => {
+      setOpen1(true);
+    };
+  
+    const handleClose1 = () => {
+      setOpen1(false);
+    };
+
+    const handleOpen2 = () => {
+      setOpen2(true);
+    };
+  
+    const handleClose2 = () => {
+      setOpen2(false);
+    };
+
+    const handleOpen3 = () => {
+      setOpen3(true);
+    };
+  
+    const handleClose3 = () => {
+      setOpen3(false);
+    };
+
 
     return (
     <div className="donateContainer">
@@ -108,24 +146,24 @@ export default function Donate() {
         </div>
         <div className="donationImageSection">
 
-<Grid container className={classes.gridContainer} spacing={6}>
+<Grid container spacing={6}>
     <Grid xs={12} sm={6} md={6} className={classes.grid}>
-    <Card className={classes.root}>
+    <Card className={classes.subRoot}>
       <CardActionArea>
         <CardMedia
           component={"img"}
-          alt="Contemplative Reptile"
+          alt="The Road"
           height="140"
-          image={fortune}
-          title="Contemplative Reptile"
+          image={road}
+          title="The Road"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            Make the Road
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            A progressive grassroots immigrant-led organization in NY State. 
+            Make the Road NY builds the power of immigrant and working class communities.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -134,8 +172,8 @@ export default function Donate() {
         Learn More
       </Button>
       <Modal
-        aria-labelledby="spring-modal-title"
-        aria-describedby="spring-modal-description"
+        aria-labelledby="spring-modal-title-"
+        aria-describedby="spring-modal-description-"
         className={classes.modal}
         open={open}
         onClose={handleClose}
@@ -147,12 +185,12 @@ export default function Donate() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="spring-modal-title">Spring modal</h2>
-            <p id="spring-modal-description">react-spring animates me.</p>
+            <h2 id="spring-modal-title-">Spring modal Please donate to one of four causes that are near and dear to my heart. These donations go to a local based organization that is in complete support of the movements, ranging from .... Org 1 supports the Black Lives Matter movement, Org 2 supports the Latinx in that, Org 3 supports Mental Health Endeavour, and Org 4 supports formely incarcerated men who are in need of mental health services to get their feet off the ground.</h2>
+            <p className={classes.details} id="spring-modal-description-">react-spring animates me.</p>
           </div>
         </Fade>
       </Modal>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" href="https://connect.clickandpledge.com/w/Form/5505c6fb-990e-4f31-a67c-a3560e59fab3">
           Donate
         </Button>
       </CardActions>
@@ -160,18 +198,18 @@ export default function Donate() {
     </Grid>
 
     <Grid xs={12} sm={6} md={6} className={classes.grid}>
-    <Card className={classes.root}>
+    <Card className={classes.subRoot}>
       <CardActionArea>
         <CardMedia
           component={"img"}
           alt="Contemplative Reptile"
           height="140"
-          image={fortune}
+          image={okra}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            The Okra Project
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
@@ -180,24 +218,24 @@ export default function Donate() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Button size="small" color="primary" onClick={handleOpen}>
+      <Button size="small" color="primary" onClick={handleOpen1}>
         Learn More
       </Button>
       <Modal
         aria-labelledby="spring-modal-title"
         aria-describedby="spring-modal-description"
         className={classes.modal}
-        open={open}
-        onClose={handleClose}
+        open={open1}
+        onClose={handleClose1}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="spring-modal-title">Spring modal</h2>
+        <Fade in={open1}>
+        <div className={classes.paper}>
+            <h2 id="spring-modal-title">Donor Modal 2</h2>
             <p id="spring-modal-description">react-spring animates me.</p>
           </div>
         </Fade>
@@ -210,7 +248,7 @@ export default function Donate() {
     </Grid>
     
     <Grid xs={12} sm={6} md={6} className={classes.grid}>
-    <Card className={classes.root}>
+    <Card className={classes.subRoot}>
       <CardActionArea>
         <CardMedia
           component={"img"}
@@ -230,24 +268,24 @@ export default function Donate() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Button size="small" color="primary" onClick={handleOpen}>
+      <Button size="small" color="primary" onClick={handleOpen2}>
         Learn More
       </Button>
       <Modal
         aria-labelledby="spring-modal-title"
         aria-describedby="spring-modal-description"
         className={classes.modal}
-        open={open}
-        onClose={handleClose}
+        open={open2}
+        onClose={handleClose2}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={open}>
+        <Fade in={open2}>
           <div className={classes.paper}>
-            <h2 id="spring-modal-title">Spring modal</h2>
+          <h2 id="spring-modal-title">Donor Modal 3</h2>
             <p id="spring-modal-description">react-spring animates me.</p>
           </div>
         </Fade>
@@ -259,100 +297,58 @@ export default function Donate() {
     </Card>
     </Grid>
 
-    <Grid xs={12} sm={6} md={6} className={classes.grid}>
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component={"img"}
-          alt="Contemplative Reptile"
-          height="140"
-          image={fortune}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-      <Button size="small" color="primary" onClick={handleOpen}>
-        Learn More
-      </Button>
-      <Modal
-        aria-labelledby="spring-modal-title"
-        aria-describedby="spring-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="spring-modal-title">Spring modal</h2>
-            <p id="spring-modal-description">react-spring animates me.</p>
-          </div>
-        </Fade>
-      </Modal>
-        <Button size="small" color="primary">
-          Donate
+      <Grid xs={12} sm={6} md={6} className={classes.grid}>
+      <Card className={classes.subRoot}>
+        <CardActionArea>
+          <CardMedia
+            component={"img"}
+            alt="Contemplative Reptile"
+            height="140"
+            image={fortune}
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Lizard
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+              across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+        <Button size="small" color="primary" onClick={handleOpen3}>
+          Learn More
         </Button>
-      </CardActions>
-    </Card>
-    </Grid>
+        <Modal
+          aria-labelledby="spring-modal-title"
+          aria-describedby="spring-modal-description"
+          className={classes.modal}
+          open={open3}
+          onClose={handleClose3}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open3}>
+            <div className={classes.paper}>
+            <h2 id="spring-modal-title">Donor Modal 4</h2>
+              <p id="spring-modal-description">react-spring animates me.</p>
+            </div>
+          </Fade>
+        </Modal>
+          <Button size="small" color="primary">
+            Donate
+          </Button>
+        </CardActions>
+      </Card>
+      </Grid>
+      
     </Grid>
 </div>
-
     </div>
     )
 }
-
-
-// const cause1 = {
-//     backgroundImage: 'url(' + change + ')',
-//     maxWidth:'100%',
-//     maxHeight:'100%',
-//     borderRadius: '10% 0 0 0 ',
-//     // marginTop: '37.5px'
-// }
-
-// const cause2 = {
-// backgroundImage: 'url(' + nysylc + ')',
-// maxWidth:'100%',
-// maxHeight:'100%',
-// borderRadius: '0 10% 0 0 ',
-// // marginTop: '37.5px'
-// }
-
-// // const cause3 = {
-// // backgroundImage: 'url(' + fortune + ')',
-// // maxWidth:'100%',
-// // maxHeight:'100%',
-// // borderRadius: '0 0 0 10% '
-// // }
-
-// const cause4 = {
-// backgroundImage: 'url(' + okra + ')',
-// borderRadius: '0 0 10% 0 ',
-// maxWidth:'100%',
-// maxHeight:'100%',
-// objectFit: 'cover',
-// // paddingRight: '30px',
-// // paddingBottom: '199px',
-// color: 'black'
-// }
-
-           {/* <ul className="imageNav">
-                 <li className="tabNav"><a href="https://secure.actblue.com/contribute/page/support-us"><section className="title2">Color of Change</section><span className="imgHolder" style={cause1}></span></a></li>
-                <li className="tabNav"><a href="https://www.nysylc.org/donate"><section className="title2"> NYSYLC </section><span className="imgHolder" style={cause2}></span></a></li>
-                <li className="tabNav"><a href="https://fortunesociety.org/ways-to-give/"><span className="imgHolder" style={cause3}></span><section className="title2">The Fortune Society</section></a></li>
-                <li className="tabNav"><a href="https://www.theokraproject.com/"><span className="imgHolder" style={cause4}></span><section className="title2">The Okra Project</section></a></li> 
-            </ul> */}
