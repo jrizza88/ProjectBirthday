@@ -277,17 +277,17 @@ export default function Info() {
             <li className={classes.reasons}>Avoiding Gov't Censorship - Because you never know if you'll end up having trying to access a censored website due to  an oppressive regime</li>
             <li className={classes.reasons}>Online Gaming - Because you might be able to connect to faster connection speeds or overcome geo-blocking restrictions ;) </li>
             <br/>
-            I personally use 1password, but Last Pass is a good free option, and Keeper Security was rated the best option by PC Mag.
+            I personally use PIA (Private Internet Access), TunnelBear is perfect for first-time users, and Mullvad VPN is the best for bargain hunters.
             </p>
             <div className={classes.optionsPassword}>
-              <Button size="small" color="secondary" href="https://1password.com/">
-                  1Password
+              <Button size="small" color="secondary" href="https://www.privateinternetaccess.com/">
+                  PIA
                 </Button>
-                <Button size="small" color="primary" href="https://www.lastpass.com/">
-                  Last Pass
+                <Button size="small" color="primary" href="https://www.tunnelbear.com/b/vpn-yearly">
+                  Tunnel Bear
                 </Button>
-                <Button size="small" href="https://www.keepersecurity.com/">
-                  Keeper Security
+                <Button size="small" href="https://mullvad.net/en/">
+                  Mullvad VPN
                 </Button>
               </div>
           </div>
