@@ -64,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
       },
       cardContent: {
+        textAlign: 'left',
         borderTop: '1px solid black'
       }
       // grid: {
@@ -150,7 +151,7 @@ export default function Donate() {
             <h1>Donate to a cause</h1>
         
             <div className="info">
-              I am tired. Most likely you are too. <br/> This is why I choose to use that tiredness to turn it into creating another space to be heard. 
+              <div className="miniInfo">I am tired. Most likely you are too.</div> <br/> This is why I choose to use that tiredness to turn it into creating another space to be heard. 
               I took the time to research and communicate with friends to find locally based organizations that support people that look like me and my loved ones in the communities that I live or spend time in. 
               Check out each one, click on "Learn More" to see more details, and donate to a worthwhile cause!
             </div>
