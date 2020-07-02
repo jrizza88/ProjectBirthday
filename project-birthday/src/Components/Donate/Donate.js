@@ -16,11 +16,10 @@ import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is requir
 import "./Donate.scss"
 import jamar from "../../images/jamar_thumbs.png"
 import road from "../../images/maketheroad.png"
-// import change from "../../images/change.png"
-//import fortune from "../../images/fortunesociety.png"
-import fortune from "../../images/fortune.jpeg"
-// import nysylc from "../../images/nysylc3.jpeg"
 import okra from "../../images/okra2.png"
+import fortune from "../../images/fortunesociety2.png"
+import vocal from "../../images/vocal.png"
+
 
 const useStyles = makeStyles((theme) => ({
     subRoot: {
@@ -31,12 +30,18 @@ const useStyles = makeStyles((theme) => ({
     modal: {
         display: 'flex',
         alignItems: 'center',
+        alignSelf: 'center',
         justifyContent: 'center',
         color: 'black',
-        width: '85%'
+        margin: '0 25px'
+        // width: '85%'
         // display: 'none'
       },
       paper: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignSelf: 'center',
+        alignItems: 'center',
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
@@ -53,6 +58,14 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.5rem',
         color: 'black'
       },
+      visitSiteButton: {
+        display: 'flex',
+        alignSelf: 'center',
+        alignItems: 'center',
+      },
+      cardContent: {
+        borderTop: '1px solid black'
+      }
       // grid: {
       //   margin: 'inherit'
       // }
@@ -136,17 +149,16 @@ export default function Donate() {
         <div className="donationInfoSection">
             <h1>Donate to a cause</h1>
         
-            <div className="info">Please donate to one of four causes
-                 that are near and dear to my heart. 
-                These donations go to a local based organization that is in complete support of the movements, ranging from ....
-                Org 1 supports the Black Lives Matter movement, Org 2 supports the Latinx in that, Org 3 supports Mental Health Endeavour, 
-                and Org 4 supports formely incarcerated men who are in need of mental health services to get their feet off the ground. 
+            <div className="info">
+              I am tired. Most likely you are too. <br/> This is why I choose to use that tiredness to turn it into creating another space to be heard. 
+              I took the time to research and communicate with friends to find locally based organizations that support people that look like me and my loved ones in the communities that I live or spend time in. 
+              Check out each one, click on "Learn More" to see more details, and donate to a worthwhile cause!
             </div>
             <img className="imageAvatar" src={jamar} alt="party" />
         </div>
         <div className="donationImageSection">
 
-<Grid container spacing={6}>
+<Grid container className={classes.gridContainer} spacing={6}>
     <Grid xs={12} sm={6} md={6} className={classes.grid}>
     <Card className={classes.subRoot}>
       <CardActionArea>
@@ -157,7 +169,7 @@ export default function Donate() {
           image={road}
           title="The Road"
         />
-        <CardContent>
+        <CardContent className={classes.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
             Make the Road
           </Typography>
@@ -185,8 +197,14 @@ export default function Donate() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="spring-modal-title-">Spring modal Please donate to one of four causes that are near and dear to my heart. These donations go to a local based organization that is in complete support of the movements, ranging from .... Org 1 supports the Black Lives Matter movement, Org 2 supports the Latinx in that, Org 3 supports Mental Health Endeavour, and Org 4 supports formely incarcerated men who are in need of mental health services to get their feet off the ground.</h2>
-            <p className={classes.details} id="spring-modal-description-">react-spring animates me.</p>
+            <h2 id="spring-modal-title-">Make the Road</h2>
+            <p className={classes.details} id="spring-modal-description-">Make the Road New York builds the power
+                    of immigrant and working class communities. They integrate strategies of legal services, education, community organizing and policy innovation.
+                    They accomplish real results, build coalitions, and publish results and success stories on their website. 
+            </p>
+            <Button size="small" className={classes.visitSiteButton} color="primary" href="https://maketheroadny.org/">
+              Visit their site
+            </Button>
           </div>
         </Fade>
       </Modal>
@@ -207,13 +225,12 @@ export default function Donate() {
           image={okra}
           title="Contemplative Reptile"
         />
-        <CardContent>
+        <CardContent className={classes.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
             The Okra Project
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            The Okra Project is a collective that seeks to address the global crisis that affects Black Trans Lives. Their focus is to provide support through meals and resources.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -236,11 +253,14 @@ export default function Donate() {
         <Fade in={open1}>
         <div className={classes.paper}>
             <h2 id="spring-modal-title">Donor Modal 2</h2>
-            <p id="spring-modal-description">react-spring animates me.</p>
+            <p className={classes.details} id="spring-modal-description">The Okra Project is a very straightforward initiative. They seek donations to help support Black Trans People by providing delicious, nutritious, and culturally specific meals. Check out their website to learn more about the meaning  </p>
+            <Button size="small" className={classes.visitSiteButton} color="primary" href="https://www.theokraproject.com/">
+              Visit their site
+            </Button>
           </div>
         </Fade>
       </Modal>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">
           Donate
         </Button>
       </CardActions>
@@ -257,13 +277,12 @@ export default function Donate() {
           image={fortune}
           title="Contemplative Reptile"
         />
-        <CardContent>
+        <CardContent className={classes.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            The Fortune Society
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            The fortune society is a NYC based organization to provide support to formerly incarcerated people. Services include housing, job opportunities, adjusting to life after prison, and education.
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -285,12 +304,19 @@ export default function Donate() {
       >
         <Fade in={open2}>
           <div className={classes.paper}>
-          <h2 id="spring-modal-title">Donor Modal 3</h2>
-            <p id="spring-modal-description">react-spring animates me.</p>
+          <h2 id="spring-modal-title">The Fortune Society</h2>
+            <p className={classes.details} id="spring-modal-description">The fortune society's mission helps to support individuals 
+                in the New York City area to meet the challenges 
+             and provide resources to help individuals re-enter society as we know it.
+              Far too many ex-prisoners end up back in the prison system in a cycle that never seems to end.
+              I believe in this organization's services and advocacy in helping to change lives for the better.  </p>
+            <Button size="small" className={classes.visitSiteButton} color="primary" href="https://fortunesociety.org/">
+              Visit their site
+            </Button>
           </div>
         </Fade>
       </Modal>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" href="https://donate.fortunesociety.org/give/186379#!/donation/checkout">
           Donate
         </Button>
       </CardActions>
@@ -304,16 +330,15 @@ export default function Donate() {
             component={"img"}
             alt="Contemplative Reptile"
             height="140"
-            image={fortune}
+            image={vocal}
             title="Contemplative Reptile"
           />
-          <CardContent>
+          <CardContent className={classes.cardContent}>
             <Typography gutterBottom variant="h5" component="h2">
-              Lizard
+              Vocal - New York 
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+            Vocal New York is a grassroots membership organization that helps to empower low-income people impacted by HIV/AIDS, the drug war, mass incarceration, and homelessness.
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -335,12 +360,17 @@ export default function Donate() {
         >
           <Fade in={open3}>
             <div className={classes.paper}>
-            <h2 id="spring-modal-title">Donor Modal 4</h2>
-              <p id="spring-modal-description">react-spring animates me.</p>
+            <h2 id="spring-modal-title">Vocal - New York</h2>
+              <p className={classes.details} id="spring-modal-description">Vocal NY supports five different main issues affecting low-income communities throughout New York. 
+              They have been around since 1999, and have built up the strength to combat homelessness, ending mass incarceratation, AIDS, the drug war, and fighting for our democracy.
+              Their movement model is based off of traditional organizing, activism, and black-led social movements to fight for racial justice. </p>
+              <Button size="small" color="primary" href="https://www.vocal-ny.org/">
+                Visit their site
+              </Button>
             </div>
           </Fade>
         </Modal>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" href="https://vocal.ourpowerbase.net/civicrm/contribute/transact?id=6">
             Donate
           </Button>
         </CardActions>

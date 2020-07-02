@@ -18,7 +18,7 @@ function App() {
           <div className='animateTitle'>Project Birthday!</div>
           {/* </div> */}
         <div className="threePanelSection">
-          <Panel title={"What is Project Birthday?"} image={Jamar} description={"No Facebook? No Problem. Project Birthday is meant to be a combination of promoting just causes, increase internet knowledge and protection, and celebrate... me! You do not have to be tech savy to protect yourself on the internet."} />
+          <Panel title={"What is Project Birthday?"} image={Jamar} description={"No Facebook? No Problem. Project Birthday is meant to be a combination of promoting just causes, increase internet knowledge and protection, and celebrate... me! Support one of four organizations that support Black and Brown communities.  You do not have to be tech savy to protect yourself on the internet. "} />
         </div>
         <div className="donateDiv">< Donate /></div>
         < Carousel />
