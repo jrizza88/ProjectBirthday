@@ -15,7 +15,7 @@ import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is requir
 
 import "./Info.scss"
 import vpn from "../../images/vpn.png"
-import passwordImage from "../../images/passwordManager3.jpg"
+import passwordImage from "../../images/passwordManager4.jpg"
 import jamarDev from "../../images/jamarDev.png"
 
 const useStyles = makeStyles((theme) => ({
