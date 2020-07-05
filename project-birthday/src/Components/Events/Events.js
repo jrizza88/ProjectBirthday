@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./Events.scss"
 import jamarParty from "../../images/jamar_party.png"
 
