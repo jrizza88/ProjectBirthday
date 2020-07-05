@@ -84,6 +84,7 @@
     color: black;
     font-size: 1.6rem;
     line-height: 1.5;
+    text-align: left;
     margin: 20px auto 30px;
     max-width: 1000px;
     @media (max-width: 760px) {
@@ -93,6 +94,21 @@
     //  align-self: center; 
   }
 }
+
+.desc{
+  display: flex;
+  flex-direction: row;
+}
+
+// .descsub{
+//   display: flex;
+//   flex-direction: row;
+// }
+
+// .descsub2{
+//   display: flex;
+//   flex-direction: row;
+// }
 
 .avatar{
   height: 250px;
