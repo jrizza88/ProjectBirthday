@@ -16,11 +16,11 @@ const Carousel = () => {
       
           <AwesomeSlider cssModule={AwsSliderStyles}>
           <div className="carouselDisplay">
-            <img className="photo" src={secondBday}/>
+            <img className="photo" src={secondBday} alt="second"/>
             <div className="meImage">I want to see what you got.</div>
           </div>
           <div className="carouselDisplay" >
-          <img className="photo" src={fifthBday}/>
+          <img className="photo" src={fifthBday} alt="fifth"/>
             <p className="meImage">I want to see what you got.</p>
           </div>
           <div className="carouselDisplay" sdata-src="/path/to/image.jpg">
