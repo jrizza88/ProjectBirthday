@@ -2,3 +2,4 @@
 base = "project-birthday/"
 publish = "project-birthday/build/"
 command = "npm run build"
+CI= npm run build
