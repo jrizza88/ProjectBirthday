@@ -37,6 +37,13 @@ body {
   width: 100%;
 }
 
+.infoDiv{
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+
 // .donateDiv {
 //   display: flex;
 //   justify-content: center;

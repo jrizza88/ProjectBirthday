@@ -8,4 +8,11 @@
     // padding: 25px 75px 0 75px;
     margin: 2rem 0;
     border: 7px solid white;
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        padding: 1.7rem 1rem;
+    }
+    @media (max-width: 600px) {
+        width: 100%;
+      }
 }

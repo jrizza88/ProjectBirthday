@@ -6,7 +6,7 @@ const Events = () => {
     return (
     <div className="eventContainer">
         <div className="mainTitleEvent">
-            <h2>Bday events!</h2>
+            <h2>Events!</h2>
             <img className="imageAvatar" src={jamarParty} alt="party" />
             <div className="eventDiv">
                 Coming soon! (Ideally, as in like, now ish)
