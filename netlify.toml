@@ -1,6 +1,6 @@
 [build]
 base = "projectBirthday/"
-publish = "public"
+publish = "projectBirthday/"
 command = "CI= npm run build"
 
 
