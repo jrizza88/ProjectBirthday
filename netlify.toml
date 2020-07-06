@@ -1,7 +1,7 @@
 [build]
 base = "project-birthday/"
 publish = "project-birthday/build/"
-command = "CI= npm run build"
+command = "npm run build"
 
 
 [[redirects]]
