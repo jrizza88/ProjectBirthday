@@ -11,7 +11,7 @@ import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Backdrop from '@material-ui/core/Backdrop';
-import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is required for IE 11 support
+import { useSpring, animated } from 'react-spring'; // web.cjs is required for IE 11 support
 
 import "./Donate.scss"
 import jamar from "../../images/jamar_thumbs.png"
@@ -253,7 +253,7 @@ export default function Donate() {
       >
         <Fade in={open1}>
         <div className={classes.paper}>
-            <h2 id="spring-modal-title">Donor Modal 2</h2>
+            <h2 id="spring-modal-title">The Okra Project</h2>
             <p className={classes.details} id="spring-modal-description">The Okra Project is a very straightforward initiative. They seek donations to help support Black Trans People by providing delicious, nutritious, and culturally specific meals. Check out their website to learn more about the meaning  </p>
             <Button size="small" className={classes.visitSiteButton} color="primary" href="https://www.theokraproject.com/">
               Visit their site
