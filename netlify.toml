@@ -1,5 +1,5 @@
 [build]
-CI = true
-base = "projectBirthday/"
+CI = "true"
+base = "/"
 publish = "projectBirthday/build/"
 command = "CI= npm run build"
