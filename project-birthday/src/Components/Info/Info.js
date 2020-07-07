@@ -11,7 +11,7 @@ import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Backdrop from '@material-ui/core/Backdrop';
-import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is required for IE 11 support
+import { useSpring, animated } from 'react-spring'; // web.cjs is required for IE 11 support
 
 import "./Info.scss"
 import vpn from "../../images/vpn.png"
@@ -51,6 +51,19 @@ subRoot: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    [theme.breakpoints.down(650)]: {
+      overflow: 'scroll',
+      position:'absolute',
+    top:'10%',
+    left:'10%',
+    overflow:'scroll',
+    height:'100%',
+    maxHeight: 500,
+    display:'block'
+    }
+  },
+  closeModal: {
+
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
@@ -64,17 +77,27 @@ subRoot: {
   },
   details: {
     fontSize: '1.3rem',
-    color: 'black'
+    color: 'black',
+    [theme.breakpoints.down(650)]: {
+      fontSize: '12px'
+    }
   },
   reasons: {
     fontSize: '1rem',
     color: 'black',
-    paddingLeft: '20'
+    paddingLeft: '20',
+    [theme.breakpoints.down(650)]: {
+      fontSize: '12px'
+    }
   },
   optionsPassword: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    [theme.breakpoints.down(650)]: {
+      fontSize: '12px',
+      justifyContent: 'space-around',
+    }
   }
 }));
 

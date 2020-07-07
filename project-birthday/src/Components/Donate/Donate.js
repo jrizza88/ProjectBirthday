@@ -33,7 +33,17 @@ const useStyles = makeStyles((theme) => ({
         alignSelf: 'center',
         justifyContent: 'center',
         color: 'black',
-        margin: '0 25px'
+        margin: '0 25px',
+        [theme.breakpoints.down(650)]: {
+          overflow: 'scroll',
+          position:'absolute',
+        top:'10%',
+        left:'10%',
+        overflow:'scroll',
+        height:'100%',
+        maxHeight: 500,
+        display:'block'
+        }
         // width: '85%'
         // display: 'none'
       },
