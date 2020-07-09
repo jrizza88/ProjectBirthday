@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
           position:'absolute',
         top:'10%',
         left:'10%',
-        overflow:'scroll',
+        // overflow:'scroll',
         height:'100%',
         maxHeight: 500,
         display:'block'

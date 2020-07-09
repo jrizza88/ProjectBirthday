@@ -254,6 +254,38 @@ body {
     }
   }
 
+  @keyframes yourAnimationMobile {
+    0.0%{
+        font-size: 1.5rem;
+        color: white;
+    }
+    20.1%{
+        transform: scale(1);
+        font-size: 1.5rem;
+        color: white;
+    }
+    40.3%{
+        transform: scale(1.35);
+        font-size: 1.5rem;
+        color: white;
+    }
+    60.1%{
+        transform: scale(1.15);
+        font-size: 1.5rem;
+        color: white;
+    }
+    79.6%{
+        transform: scale(1.35);
+        font-size: 1.5rem;
+        color: white;
+    }
+    99.5%{
+        transform: scale(1);
+        font-size: 1.5rem;
+        color: white;
+    }
+  }
+
 /* Add the animation: property to whichever element you want to animate */
 // #elementToAnimate{
 //   animation: yourAnimation 5s ease 0s infinite normal forwards;
@@ -265,6 +297,20 @@ body {
   font-size: 3rem;
   color: white;
   margin: 33px 0;
+  @media (max-width: 600px) {
+    display: none;
+}
+}
+
+.animateTitleMobile{
+  display: none;
+  @media (max-width: 600px) {
+  display: block;
+  animation: yourAnimationMobile 5s ease 2s infinite normal forwards;
+  font-size: 1.5rem;
+  color: white;
+  margin: 33px 0;
+  }
 }
 
 .targetElement{

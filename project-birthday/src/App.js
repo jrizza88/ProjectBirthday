@@ -16,6 +16,7 @@ function App() {
       <div className="container">
           {/* <div className="targetElement"> */}
           <div className='animateTitle'>Project Birthday!</div>
+          <div className='animateTitleMobile'>Project Birthday!</div>
           {/* </div> */}
         <div className="threePanelSection">
   <Panel title={"What is Project Birthday?"} image={Jamar} />

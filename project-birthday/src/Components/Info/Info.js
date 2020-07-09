@@ -95,8 +95,14 @@ subRoot: {
     alignItems: 'center',
     justifyContent: 'space-between',
     [theme.breakpoints.down(650)]: {
-      fontSize: '12px',
+      fontSize: '10px',
       justifyContent: 'space-around',
+    }
+  },
+  button: {
+    [theme.breakpoints.down(650)]: {
+      display: 'flex',
+      justifyContent: 'center',
     }
   }
 }));
@@ -226,15 +232,15 @@ export default function Info() {
             I personally use 1password, but Last Pass is a good free option, and Keeper Security was rated the best option by PC Mag.
             </p>
             <div className={classes.optionsPassword}>
-              <Button size="small" color="secondary" href="https://1password.com/">
+            <Button className={classes.button} size="small" color="secondary" href="https://1password.com/">
                   1Password
                 </Button>
-                <Button size="small" color="primary" href="https://www.lastpass.com/">
+                <Button className={classes.button} size="small" color="primary" href="https://www.lastpass.com/">
                   Last Pass
                 </Button>
-                <Button size="small" href="https://www.keepersecurity.com/">
+                <Button className={classes.button} size="small" href="https://www.keepersecurity.com/">
                   Keeper Security
-                </Button>
+            </Button>
               </div>
           </div>
         </Fade>
@@ -303,13 +309,13 @@ export default function Info() {
             I personally use PIA (Private Internet Access), TunnelBear is perfect for first-time users, and Mullvad VPN is the best for bargain hunters.
             </p>
             <div className={classes.optionsPassword}>
-              <Button size="small" color="secondary" href="https://www.privateinternetaccess.com/">
+              <Button className={classes.button} size="small" color="secondary" href="https://www.privateinternetaccess.com/">
                   PIA
                 </Button>
-                <Button size="small" color="primary" href="https://www.tunnelbear.com/b/vpn-yearly">
+                <Button className={classes.button} size="small" color="primary" href="https://www.tunnelbear.com/b/vpn-yearly">
                   Tunnel Bear
                 </Button>
-                <Button size="small" href="https://mullvad.net/en/">
+                <Button className={classes.button} size="small" href="https://mullvad.net/en/">
                   Mullvad VPN
                 </Button>
               </div>
