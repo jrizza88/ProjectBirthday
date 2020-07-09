@@ -40,12 +40,14 @@ h2 {
 }
 
 .info {
-    text-align: justify;
+    // text-align: justify;
+    text-align: left;
     font-size: 1.5rem;
     padding-bottom: 1.5rem;
     padding-right: 1rem;
     @media (max-width: 1024px) {
         padding-right: inherit;
+        text-align: left;
     }
 }
 
