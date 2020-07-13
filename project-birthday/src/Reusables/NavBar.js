@@ -1,6 +1,8 @@
 import React from 'react';
 //import { Link, animateScroll as scroll } from "react-scroll";
-import { Link } from "react-scroll";
+import {Link} from "react-scroll";
+import { NavLink } from "react-router-dom";
+// import Link from '@material-ui/core/Link';
 import "./NavBar.scss";
 import birthday from "../images/birthday.png"
 
@@ -14,6 +16,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -114,6 +117,7 @@ const useStyles = makeStyles(theme => ({
 //const Navbar = ({ visible }) => {
 const Navbar = () => {
   const classes = useStyles();
+  const preventDefault = (event) => event.preventDefault();
   // const { classes } = props;
 
   const [state, setState] = React.useState({
@@ -193,45 +197,49 @@ const Navbar = () => {
           <IconButton className={classes.menuButton} edge="start"  color="inherit" aria-label="menu" onClick={toggleDrawer("right", true)}>
                     <MenuIcon />
           </IconButton>
-            <Drawer open={state.right} onClose={toggleDrawer("right", false)}>
+            <Drawer open={state.right} onClose={toggleDrawer("right", false)} onClick={preventDefault}  >
               <List className={classes.mobileMenu}>
                 {/* <ListItem><NavLink to="/About" component={About} className={classes.a}><Button className={classes.titleMobile}>About</Button></NavLink></ListItem>
                 <ListItem><NavLink to="/Projects" component={Projects} className={classes.a}><Button color="inherit" className={classes.titleMobile}>Projects</Button></NavLink></ListItem>
                 <ListItem><NavLink to="/Contact" component={Contact} className={classes.a}><Button color="inherit" className={classes.titleMobile}>Contact</Button></NavLink></ListItem> */}
- <ListItem >
-   <Link activeClass="active" 
-      className={classes.navItemM}
-      to="donateDiv"    
-      spy={true}
-      smooth={true}    
-      offset={-70}
-      duration={800}>Donate</Link>
-  </ListItem>
+          <ListItem >
+            <Link activeClass="active" 
+                className={classes.navItemM}
+                to="donateDiv"    
+                spy={true}
+                smooth={true}    
+                offset={-70}
+                duration={800}>Donate</Link>
+            </ListItem>
 
-  <ListItem >
-      <Link activeClass="active" 
-      className={classes.navItemM}
-      to="infoDiv"    
-      spy={true}
-      smooth={true}    
-      offset={-70}
-      duration={800}>Learn
-      </Link>
-  </ListItem>
-    <ListItem >
-        <Link activeClass="active" 
-        className={classes.navItemM}
-        to="eventsDiv"    
-        spy={true}
-        smooth={true}    
-        offset={-70}
-        duration={800}>Celebrate
-        </Link>
-      </ListItem>
-              </List>
-            </Drawer>
-          </Toolbar>
-        </AppBar>
+            <ListItem >
+                <Link activeClass="active" 
+                className={classes.navItemM}
+                to="infoDiv"
+                spy={true}
+                smooth={true}    
+                offset={-70}
+                duration={800}>Learn
+                </Link>
+            </ListItem>
+             
+              <ListItem >
+                  <Link activeClass="active" 
+                  className={classes.navItemM}
+                  to="eventsDiv"
+                  // onClick={preventDefault}  
+                  spy={true}
+                  smooth={true}    
+                  offset={-70}
+                  duration={800}><NavLink to="eventsDiv">Celebrate</NavLink>
+                  </Link>
+                  
+                </ListItem>
+            
+                        </List>
+                      </Drawer>
+                    </Toolbar>
+                  </AppBar>
       </div>
 
 
