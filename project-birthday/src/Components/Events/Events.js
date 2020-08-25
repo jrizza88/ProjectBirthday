@@ -9,7 +9,7 @@ const Events = () => {
             <h2>Events!</h2>
             <img className="imageAvatar" src={jamarParty} alt="party" />
             <div className="eventDiv">
-                Coming soon! <br/> Ideally, these events will support <br /> black and brown businesses.
+                Coming soon! <br/> 
             </div>
         </div>
     </div>
